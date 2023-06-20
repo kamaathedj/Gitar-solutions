@@ -7,7 +7,7 @@ type Info = {
 
 interface StoreModel {
   count: number;
-  data?: Info[];
+  data?: Array<Info>;
 }
 
 const store = createStore<StoreModel>({
