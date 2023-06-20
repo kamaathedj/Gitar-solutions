@@ -1,17 +1,28 @@
-import { createStore } from 'easy-peasy';
+/* eslint-disable no-param-reassign */
+import { createStore, action, Action } from 'easy-peasy';
 
-interface Dark {
+interface Theme {
   text_color: string;
-  background_coolor: string;
-}
-interface Light {
-  text_color: string;
+  background_color: string;
 }
 interface Mode {
-  mode: Light | Dark;
+  mode: Theme;
+  ChangeMode: Action<Mode, Theme>;
 }
+const dark: Theme = {
+  text_color: '#000000',
+  background_color: '#121212',
+};
+const light: Theme = {
+  text_color: '#fefefe',
+  background_color: '#12dceb',
+};
 const ModeStore = createStore<Mode>({
-  mode: { text_color: 'fefefe', background_coolor: 'fefe' },
+  mode: dark,
+  ChangeMode: action((state) => {
+    state.mode = dark;
+    console.log(JSON.stringify(state.mode));
+  }),
 });
 
 export default ModeStore;
