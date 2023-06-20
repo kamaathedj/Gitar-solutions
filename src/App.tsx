@@ -1,19 +1,19 @@
-import { useStoreActions, Actions, action } from 'easy-peasy';
+import { useStoreActions, Actions, useStoreState, State } from 'easy-peasy';
 import './App.css';
 import ModeStore from './Store/ModeStore';
-import store from './Store/PlayStore';
 
 function App() {
+  const store = useStoreState((state: State<typeof ModeStore>) => state.mode);
   const ChangeMode = useStoreActions(
     (actions: Actions<typeof ModeStore>) => actions.ChangeMode
   );
 
   return (
     <div>
-      <button type="submit" onClick={ChangeMode}>
+      <button type="button" onClick={ChangeMode}>
         change Mode
       </button>
-      <h1>hello world</h1>
+      <h5>{JSON.stringify(store)}</h5>
     </div>
   );
 }

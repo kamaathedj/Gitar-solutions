@@ -20,8 +20,7 @@ const light: Theme = {
 const ModeStore = createStore<Mode>({
   mode: dark,
   ChangeMode: action((state) => {
-    state.mode = dark;
-    console.log(JSON.stringify(state.mode));
+    state.mode = Math.random() > 0.5 ? light : dark;
   }),
 });
 
