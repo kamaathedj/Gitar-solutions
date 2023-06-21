@@ -1,8 +1,24 @@
 #root {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  /* text-align: center; */
+}
+.header{
+  position: absolute;
+  Color:rgb(8, 73, 148);
+  width: 100%;
+  height: 25%;
+  background-color: #0f0f14aa;
+  text-decoration-color: rgb(117, 25, 25);
+  
+}
+.header h3{
+  color:#61dafbaa;
+  margin-left: 2em;
+  text-align: left;
+}
+.logotext{
+  text-align: left;
+  margin-left: 3em;
 }
 
 .logo {

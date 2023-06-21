@@ -1,5 +1,6 @@
 import './App.css';
 import { useStoreActions, useStoreState } from './hooks/Easy-peasy-hooks';
+import Header from './components/Header';
 
 function App() {
   const store = useStoreState((state) => state.mode);
@@ -12,10 +13,11 @@ function App() {
 
   return (
     <div>
-      <button type="button" onClick={handleClick}>
+      <Header />
+      {/* <button type="button" onClick={handleClick}>
         change Mode
       </button>
-      <h5>{JSON.stringify(store)}</h5>
+      <h5>{JSON.stringify(store)}</h5> */}
     </div>
   );
 }
