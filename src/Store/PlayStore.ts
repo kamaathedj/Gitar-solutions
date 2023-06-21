@@ -7,13 +7,13 @@ type Info = {
 };
 
 interface StoreModel {
-  done: Computed<StoreModel, Info[]>;
+  count: Computed<StoreModel, number>;
   data: Array<Info>;
 }
 
 const store = createStore<StoreModel>({
   data: [],
-  done: computed((state) => state.data.filter((m) => m.done)),
+  count: computed((state) => state.data.length),
 });
 
 export default store;
