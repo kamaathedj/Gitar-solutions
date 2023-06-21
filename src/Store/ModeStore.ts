@@ -5,9 +5,9 @@ interface Theme {
   text_color: string;
   background_color: string;
 }
-interface Mode {
+export interface Mode {
   mode: Theme;
-  ChangeMode: Action<Mode, Theme>;
+  ChangeMode: Action<Mode, Theme | undefined>;
 }
 const dark: Theme = {
   text_color: '#000000',
@@ -17,11 +17,9 @@ const light: Theme = {
   text_color: '#fefefe',
   background_color: '#12dceb',
 };
-const ModeStore = createStore<Mode>({
+export const ModeStore = createStore<Mode>({
   mode: dark,
   ChangeMode: action((state) => {
     state.mode = Math.random() > 0.5 ? light : dark;
   }),
 });
-
-export default ModeStore;

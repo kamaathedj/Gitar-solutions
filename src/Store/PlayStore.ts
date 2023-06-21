@@ -1,23 +1,19 @@
-import { createStore } from 'easy-peasy';
+import { createStore, computed, Computed } from 'easy-peasy';
 
 type Info = {
   title: string;
   description: string;
+  done: boolean;
 };
 
 interface StoreModel {
-  count: number;
-  data?: Array<Info>;
+  done: Computed<StoreModel, Info[]>;
+  data: Array<Info>;
 }
 
 const store = createStore<StoreModel>({
-  data: [
-    {
-      title: 'my title',
-      description: 'my description',
-    },
-  ],
-  count: 0,
+  data: [],
+  done: computed((state) => state.data.filter((m) => m.done)),
 });
 
 export default store;

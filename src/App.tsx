@@ -1,16 +1,18 @@
-import { useStoreActions, Actions, useStoreState, State } from 'easy-peasy';
 import './App.css';
-import ModeStore from './Store/ModeStore';
+import { useStoreActions, useStoreState } from './hooks/Easy-peasy-hooks';
 
 function App() {
-  const store = useStoreState((state: State<typeof ModeStore>) => state.mode);
-  const ChangeMode = useStoreActions(
-    (actions: Actions<typeof ModeStore>) => actions.ChangeMode
-  );
+  const store = useStoreState((state) => state.mode);
+  const ChangeMode = useStoreActions((actions) => actions.ChangeMode);
+
+  const handleClick = (e: any) => {
+    e.preventDefault();
+    ChangeMode(undefined);
+  };
 
   return (
     <div>
-      <button type="button" onClick={ChangeMode}>
+      <button type="button" onClick={handleClick}>
         change Mode
       </button>
       <h5>{JSON.stringify(store)}</h5>
