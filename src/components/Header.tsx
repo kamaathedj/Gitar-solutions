@@ -1,7 +1,9 @@
+import classes from '../trial.module.css';
+
 function Header() {
   return (
     <div className="header">
-      <h3>Gitar solutions</h3>
+      <h3 className={classes.play}>Gitar solutions</h3>
       <h5 className="logotext">logo here</h5>
     </div>
   );

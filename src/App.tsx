@@ -14,10 +14,11 @@ function App() {
   return (
     <div>
       <Header />
-      {/* <button type="button" onClick={handleClick}>
+      <button type="button" onClick={handleClick}>
         change Mode
       </button>
-      <h5>{JSON.stringify(store)}</h5> */}
+
+      <h5>{JSON.stringify(store.background_color)}</h5>
     </div>
   );
 }
