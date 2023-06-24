@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /// <reference types="vitest"/>
 /// <reference types="vite/client"/>
 
@@ -6,6 +7,10 @@ import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  // base: '/nana/',
+  server: {
+    port: 3000,
+  },
   plugins: [react()],
   test: {
     globals: true,
@@ -13,4 +18,3 @@ export default defineConfig({
     setupFiles: ['./src/setupTests.ts'],
   },
 });
-
