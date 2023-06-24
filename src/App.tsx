@@ -1,6 +1,8 @@
 import './App.css';
+import { HashRouter } from 'react-router-dom';
 import { useStoreActions, useStoreState } from './hooks/Easy-peasy-hooks';
 import Header from './components/Header';
+import Routing from './components/Routing';
 
 function App() {
   const store = useStoreState((state) => state.mode);
@@ -12,9 +14,10 @@ function App() {
   };
 
   return (
-    <div>
+    <HashRouter>
       <Header name="Gitar solutions">logo here .........</Header>
-    </div>
+      <Routing />
+    </HashRouter>
   );
 }
 
