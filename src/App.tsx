@@ -15,7 +15,6 @@ function App() {
 
   return (
     <HashRouter>
-      <Header name="Gitar solutions">logo here .........</Header>
       <Routing />
     </HashRouter>
   );
