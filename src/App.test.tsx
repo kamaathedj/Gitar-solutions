@@ -1,17 +1,17 @@
 import { describe, it } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import NotFound from './pages/NotFound';
 
 describe('test app.tsx', () => {
   it('render app.tsx', () => {
     // arrange
-    render(<App />);
+    render(<NotFound />);
     // act
     // assert
     expect(
       screen.getByRole('heading', {
         level: 1,
       })
-    ).toHaveTextContent('hello world');
+    ).toHaveTextContent('NotFound');
   });
 });
