@@ -6,14 +6,18 @@ type Info = {
   done: boolean;
 };
 
-interface StoreModel {
+export interface StoreModel {
   count: Computed<StoreModel, number>;
   data: Array<Info>;
 }
 
-const store = createStore<StoreModel>({
-  data: [],
+export const store = createStore<StoreModel>({
+  data: [
+    {
+      title: 'animal pilgrimage',
+      description: 'it happens in the plains of mara ...',
+      done: true,
+    },
+  ],
   count: computed((state) => state.data.length),
 });
-
-export default store;

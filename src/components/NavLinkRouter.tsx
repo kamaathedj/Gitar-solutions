@@ -4,18 +4,18 @@ export default function NavLinkRouter() {
   return (
     <div className="navlink">
       <NavLink
+        className="item"
         style={({ isActive }) => ({
-          margin: '1rem 0',
-          color: isActive ? 'red' : '',
+          color: isActive ? 'white' : '',
         })}
         to="/"
       >
         Home
       </NavLink>
       <NavLink
+        className="item"
         style={({ isActive }) => ({
-          margin: '1rem 0',
-          color: isActive ? 'red' : '',
+          color: isActive ? 'white' : '',
         })}
         to="/product"
       >
@@ -23,9 +23,9 @@ export default function NavLinkRouter() {
         Product{' '}
       </NavLink>
       <NavLink
+        className="item"
         style={({ isActive }) => ({
-          margin: '1rem 0',
-          color: isActive ? 'red' : '',
+          color: isActive ? 'white' : '',
         })}
         to="/about"
       >
