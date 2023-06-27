@@ -18,6 +18,11 @@ export const store = createStore<StoreModel>({
       description: 'it happens in the plains of mara ...',
       done: true,
     },
+    {
+      title: 'human population',
+      description: '8 billions of us on a cold rock',
+      done: true,
+    },
   ],
   count: computed((state) => state.data.length),
 });

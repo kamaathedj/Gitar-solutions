@@ -2,10 +2,12 @@ import Header from '../components/Header';
 import { useStoreState } from '../hooks/Easy-peasy-hooks';
 
 function Home() {
-  const data = useStoreState((state) => state.data);
+  const { count, data } = useStoreState((state) => state);
   return (
     <>
-      <Header name="Gitar solutions">logo here .........</Header>
+      <Header name="Gitar solutions" count={count}>
+        logo here .........
+      </Header>
       <ul className="list">
         {data.map((x) => (
           <>
