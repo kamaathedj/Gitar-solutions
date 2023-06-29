@@ -11,7 +11,7 @@ function Home() {
       <ul className="list">
         {data.map((x) => (
           <>
-            <span key={x.title}>{x.description}</span>
+            <li key={x.title}>{x.description}</li>
             <button type="submit">{x.title}</button>
           </>
         ))}

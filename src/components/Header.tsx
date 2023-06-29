@@ -1,5 +1,6 @@
 import classes from '../trial.module.css';
 import NavLinkRouter from './NavLinkRouter';
+import logo from '../assets/react.svg';
 
 interface Props {
   name: string;
@@ -10,7 +11,7 @@ function Header({ name, children, count }: Props) {
   return (
     <div className="header">
       <h3 className={classes.play}>{name}</h3>
-      <h5 className="logotext">{children}</h5>
+      <img src={logo} alt="logo" className="logotext" />
       <span className="logotext count">{count}</span>
       <NavLinkRouter />
     </div>
