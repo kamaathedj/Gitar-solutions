@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 import NavLinkRouter from './NavLinkRouter';
-import logo from '../assets/react.svg';
+import carrot from '../assets/carrot.svg';
 
 interface Props {
   name: string;
@@ -9,10 +9,10 @@ interface Props {
 }
 const Box = styled.div`
   background: #5e0472;
-  position: absolute;
+  position: fixed;
   display: block;
   width: 100%;
-  height: 10em;
+  height: 11em;
 `;
 const H3 = styled.h3`
   color: rgba(97, 218, 251, 0.667);
@@ -20,25 +20,32 @@ const H3 = styled.h3`
   text-align: left;
 `;
 
-const Span = styled.span`
+const Span = styled.a`
   text-align: left;
   margin-left: 2em;
   border-radius: 10px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  padding: 0.2em 1em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
   background-color: rgba(97, 218, 251, 0.667);
 `;
 
+const Img = styled.img`
+  width: 3em;
+  height: 3em;
+`;
+
 function Header({ name, children, count }: Props) {
   return (
     <Box>
       <H3>{name}</H3>
-      <img src={logo} alt="logo" className="logotext" />
-      {count > 0 ? <Span>{count}</Span> : <p />}
-      <NavLinkRouter />
+      <Img src={carrot} alt="logo" className="logotext" />
+      <div>
+        {count > 0 ? <Span>{count}</Span> : <p />}
+        <NavLinkRouter />
+      </div>
     </Box>
   );
 }

@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 export default function NavLinkRouter() {
   return (
-    <div className="navlink">
+    <span className="navlink">
       <NavLink
         className="item"
         style={({ isActive }) => ({
@@ -32,6 +32,6 @@ export default function NavLinkRouter() {
         {' '}
         About
       </NavLink>
-    </div>
+    </span>
   );
 }
