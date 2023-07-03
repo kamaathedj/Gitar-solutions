@@ -2,20 +2,23 @@
 import { createStore, action, Action } from 'easy-peasy';
 
 interface Theme {
-  text_color: string;
-  background_color: string;
+  primary: string;
+  text: string;
+  background: string;
 }
 export interface Mode {
   mode: Theme;
   ChangeMode: Action<Mode, Theme | undefined>;
 }
 const dark: Theme = {
-  text_color: '#000000',
-  background_color: '#121212',
+  primary: '#000000',
+  text: '#000fef',
+  background: '#e2e2e2',
 };
 const light: Theme = {
-  text_color: '#fefefe',
-  background_color: '#12dceb',
+  primary: '#f45511',
+  text: '#000',
+  background: '#fff',
 };
 export const ModeStore = createStore<Mode>({
   mode: dark,
@@ -23,3 +26,7 @@ export const ModeStore = createStore<Mode>({
     state.mode = Math.random() > 0.5 ? light : dark;
   }),
 });
+
+export type ThemeType = typeof light;
+const theme = dark; // set the light theme as the default.
+export default theme;

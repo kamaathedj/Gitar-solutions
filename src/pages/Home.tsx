@@ -1,5 +1,5 @@
-import Header from '../components/Header';
 import { useStoreState } from '../hooks/Easy-peasy-hooks';
+import Header from '../components/Header';
 
 function Home() {
   const { count, data } = useStoreState((state) => state);

@@ -1,6 +1,7 @@
-import { styled } from 'styled-components';
+import { ThemeProvider, styled } from 'styled-components';
 import NavLinkRouter from './NavLinkRouter';
 import carrot from '../assets/carrot.svg';
+import theme from '../Store/ModeStore';
 
 interface Props {
   name: string;
@@ -8,7 +9,7 @@ interface Props {
   children: React.ReactNode;
 }
 const Box = styled.div`
-  background: #5e0472;
+  background: ${(props) => props.theme.primary};
   position: fixed;
   display: block;
   width: 100%;
@@ -39,14 +40,16 @@ const Img = styled.img`
 
 function Header({ name, children, count }: Props) {
   return (
-    <Box>
-      <H3>{name}</H3>
-      <Img src={carrot} alt="logo" className="logotext" />
-      <div>
-        {count > 0 ? <Span>{count}</Span> : <p />}
-        <NavLinkRouter />
-      </div>
-    </Box>
+    <ThemeProvider theme={theme}>
+      <Box>
+        <H3>{name}</H3>
+        <Img src={carrot} alt="logo" className="logotext" />
+        <div>
+          {count > 0 ? <Span>{count}</Span> : <p />}
+          <NavLinkRouter />
+        </div>
+      </Box>
+    </ThemeProvider>
   );
 }
 

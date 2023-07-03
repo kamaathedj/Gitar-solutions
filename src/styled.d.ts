@@ -1,14 +1,9 @@
+/* eslint-disable @typescript-eslint/no-empty-interface */
 // import original module declarations
 import 'styled-components';
+import { ThemeType } from './Store/ModeStore';
 
 // and extend them!
 declare module 'styled-components' {
-  export interface DefaultTheme {
-    borderRadius: string;
-
-    colors: {
-      main: string;
-      secondary: string;
-    };
-  }
+  export interface DefaultTheme extends ThemeType {}
 }
