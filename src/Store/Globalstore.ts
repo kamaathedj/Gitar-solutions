@@ -2,10 +2,8 @@ import { createStore } from 'easy-peasy';
 import { ModeStore } from './ModeStore';
 import { store } from './PlayStore';
 
-const globalModel = {
-  ModeStore,
-  store,
+export const globalModel = {
+  theme: ModeStore,
+  products: store,
 };
-const globalStore = createStore(globalModel);
-
-export default globalStore;
+export const globalStore = createStore(globalModel);

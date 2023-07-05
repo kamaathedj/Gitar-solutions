@@ -2,7 +2,8 @@ import { useStoreState } from '../hooks/Easy-peasy-hooks';
 import Header from '../components/Header';
 
 function Home() {
-  const { count, data } = useStoreState((state) => state);
+  const x = useStoreState((state) => state.products);
+  console.log(x);
   return (
     <>
       <Header name="Gitar solutions" count={count}>
