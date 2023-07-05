@@ -5,6 +5,7 @@ interface Theme {
   primary: string;
   text: string;
   background: string;
+  buttonColor: string;
 }
 export interface Mode {
   mode: Theme;
@@ -15,11 +16,13 @@ const dark: Theme = {
   primary: '#000000',
   text: '#000fef',
   background: '#e2e2e2',
+  buttonColor: '#ffffff',
 };
 const light: Theme = {
-  primary: '#f45511',
+  primary: '#e2eaebaa',
   text: '#000',
   background: '#fff',
+  buttonColor: '#000000',
 };
 export const ModeData: Mode = {
   mode: dark,

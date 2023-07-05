@@ -42,6 +42,7 @@ const Toggle = styled.button`
   float: right;
   margin-right: 3em;
   color: ${(props) => props.theme.text};
+  background-color: ${(props) => props.theme.backgroundColor};
 `;
 
 function Header({ name, children, count }: Props) {
