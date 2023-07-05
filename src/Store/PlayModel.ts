@@ -1,4 +1,4 @@
-import { createStore, computed, Computed } from 'easy-peasy';
+import { computed, Computed } from 'easy-peasy';
 
 type Info = {
   title: string;

@@ -1,4 +1,3 @@
-import { MouseEventHandler } from 'react';
 import { useStoreActions, useStoreState } from '../hooks/Easy-peasy-hooks';
 import Header from '../components/Header';
 
@@ -11,7 +10,7 @@ function Home() {
   };
   return (
     <>
-      <Header name="Gitar solutions" count={count}>
+      <Header name="Developer" count={count}>
         logo here .........
       </Header>
       <ul className="list">

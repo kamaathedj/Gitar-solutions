@@ -1,7 +1,6 @@
 import { ThemeProvider, styled } from 'styled-components';
 import NavLinkRouter from './NavLinkRouter';
 import carrot from '../assets/carrot.svg';
-import theme from '../Store/ThemeModel';
 import { useStoreState } from '../hooks/Easy-peasy-hooks';
 
 interface Props {
@@ -15,6 +14,7 @@ const Box = styled.div`
   display: block;
   width: 100%;
   height: 11em;
+  z-index: 1;
 `;
 const H3 = styled.h3`
   color: rgba(97, 218, 251, 0.667);

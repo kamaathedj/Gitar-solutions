@@ -8,6 +8,7 @@ interface Theme {
 }
 export interface Mode {
   mode: Theme;
+  isDark: boolean;
   ChangeMode: Action<Mode, Theme | undefined>;
 }
 const dark: Theme = {
@@ -22,7 +23,9 @@ const light: Theme = {
 };
 export const ModeData: Mode = {
   mode: dark,
+  isDark: false,
   ChangeMode: action((state) => {
-    state.mode = Math.random() > 0.5 ? light : dark;
+    state.mode = state.isDark ? light : dark;
+    state.isDark = !state.isDark;
   }),
 };
