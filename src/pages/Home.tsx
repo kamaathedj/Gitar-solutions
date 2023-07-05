@@ -5,7 +5,7 @@ import Header from '../components/Header';
 function Home() {
   const { count, data } = useStoreState((state) => state.products);
   const { ChangeMode } = useStoreActions((state) => state.theme);
-  const handleClick = (e: MouseEvent) => {
+  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     ChangeMode(undefined);
   };
