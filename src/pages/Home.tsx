@@ -1,13 +1,9 @@
-import { useStoreActions, useStoreState } from '../hooks/Easy-peasy-hooks';
+import { useStoreState } from '../hooks/Easy-peasy-hooks';
 import Header from '../components/Header';
 
 function Home() {
   const { count, data } = useStoreState((state) => state.products);
-  const { ChangeMode } = useStoreActions((state) => state.theme);
-  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
-    e.preventDefault();
-    ChangeMode(undefined);
-  };
+
   return (
     <>
       <Header name="Developer" count={count}>
@@ -21,10 +17,6 @@ function Home() {
           </>
         ))}
       </ul>
-      <button type="submit" onClick={handleClick}>
-        {' '}
-        change to mode
-      </button>
     </>
   );
 }

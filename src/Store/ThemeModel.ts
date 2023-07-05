@@ -25,7 +25,7 @@ export const ModeData: Mode = {
   mode: dark,
   isDark: false,
   ChangeMode: action((state) => {
-    state.mode = state.isDark ? light : dark;
+    state.mode = state.isDark ? dark : light;
     state.isDark = !state.isDark;
   }),
 };

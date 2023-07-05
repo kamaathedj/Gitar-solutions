@@ -1,7 +1,7 @@
-import { ThemeProvider, styled } from 'styled-components';
+import { styled } from 'styled-components';
 import NavLinkRouter from './NavLinkRouter';
 import carrot from '../assets/carrot.svg';
-import { useStoreState } from '../hooks/Easy-peasy-hooks';
+import { useStoreActions } from '../hooks/Easy-peasy-hooks';
 
 interface Props {
   name: string;
@@ -38,20 +38,31 @@ const Img = styled.img`
   width: 3em;
   height: 3em;
 `;
+const Toggle = styled.button`
+  float: right;
+  margin-right: 3em;
+  color: ${(props) => props.theme.text};
+`;
 
 function Header({ name, children, count }: Props) {
-  const { mode } = useStoreState((state) => state.theme);
+  const { ChangeMode } = useStoreActions((state) => state.theme);
+  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
+    e.preventDefault();
+    ChangeMode(undefined);
+  };
   return (
-    <ThemeProvider theme={mode}>
-      <Box>
+    <Box>
+      <p>
         <H3>{name}</H3>
-        <Img src={carrot} alt="logo" className="logotext" />
-        <div>
-          {count > 0 ? <Span>{count}</Span> : <p />}
-          <NavLinkRouter />
-        </div>
-      </Box>
-    </ThemeProvider>
+        <Toggle onClick={handleClick}>Dark|Light</Toggle>
+      </p>
+      <Img src={carrot} alt="logo" className="logotext" />
+
+      <div>
+        {count > 0 ? <Span>{count}</Span> : <p />}
+        <NavLinkRouter />
+      </div>
+    </Box>
   );
 }
 
