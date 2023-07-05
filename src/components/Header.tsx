@@ -1,7 +1,8 @@
 import { ThemeProvider, styled } from 'styled-components';
 import NavLinkRouter from './NavLinkRouter';
 import carrot from '../assets/carrot.svg';
-import theme from '../Store/ModeStore';
+import theme from '../Store/ThemeModel';
+import { useStoreState } from '../hooks/Easy-peasy-hooks';
 
 interface Props {
   name: string;
@@ -39,8 +40,9 @@ const Img = styled.img`
 `;
 
 function Header({ name, children, count }: Props) {
+  const { mode } = useStoreState((state) => state.theme);
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={mode}>
       <Box>
         <H3>{name}</H3>
         <Img src={carrot} alt="logo" className="logotext" />

@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import { createStore, action, Action } from 'easy-peasy';
+import { action, Action } from 'easy-peasy';
 
 interface Theme {
   primary: string;
@@ -20,13 +20,9 @@ const light: Theme = {
   text: '#000',
   background: '#fff',
 };
-export const ModeStore = createStore<Mode>({
+export const ModeData: Mode = {
   mode: dark,
   ChangeMode: action((state) => {
     state.mode = Math.random() > 0.5 ? light : dark;
   }),
-});
-
-export type ThemeType = typeof light;
-const theme = dark; // set the light theme as the default.
-export default theme;
+};

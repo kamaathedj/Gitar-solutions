@@ -1,9 +1,9 @@
-import { useStoreState } from '../hooks/Easy-peasy-hooks';
+import { useStoreActions, useStoreState } from '../hooks/Easy-peasy-hooks';
 import Header from '../components/Header';
 
 function Home() {
-  const x = useStoreState((state) => state.products);
-  console.log(x);
+  const { count, data } = useStoreState((state) => state.products);
+  const { ChangeMode } = useStoreActions((state) => state.theme);
   return (
     <>
       <Header name="Gitar solutions" count={count}>
@@ -17,6 +17,10 @@ function Home() {
           </>
         ))}
       </ul>
+      <button type="submit" onClick={ChangeMode}>
+        {' '}
+        change to mode
+      </button>
     </>
   );
 }

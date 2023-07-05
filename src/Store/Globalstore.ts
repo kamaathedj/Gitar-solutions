@@ -1,9 +1,13 @@
 import { createStore } from 'easy-peasy';
-import { ModeStore } from './ModeStore';
-import { store } from './PlayStore';
+import { ModeData, Mode } from './ThemeModel';
+import { PlayData, PlayModel } from './PlayModel';
 
-export const globalModel = {
-  theme: ModeStore,
-  products: store,
+export interface GlobalTypes {
+  theme: Mode;
+  products: PlayModel;
+}
+export const globalModel: GlobalTypes = {
+  theme: ModeData,
+  products: PlayData,
 };
 export const globalStore = createStore(globalModel);
