@@ -6,6 +6,7 @@ interface Theme {
   text: string;
   background: string;
   buttonColor: string;
+  cardColor: string;
 }
 export interface Mode {
   mode: Theme;
@@ -14,15 +15,17 @@ export interface Mode {
 }
 const dark: Theme = {
   primary: '#253441',
-  text: '#000fef',
+  text: '#fdfdfd',
   background: '#e2e2e2',
   buttonColor: '#ffffff',
+  cardColor: '#253441',
 };
 const light: Theme = {
   primary: '#e2eaeb',
   text: '#000',
   background: '#fff',
   buttonColor: '#f9f9f9',
+  cardColor: 'rgba(255, 255, 255, 0.8)',
 };
 export const ModeData: Mode = {
   mode: light,
