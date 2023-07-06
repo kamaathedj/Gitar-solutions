@@ -13,16 +13,16 @@ export interface Mode {
   ChangeMode: Action<Mode, Theme | undefined>;
 }
 const dark: Theme = {
-  primary: '#000000',
+  primary: '#253441',
   text: '#000fef',
   background: '#e2e2e2',
   buttonColor: '#ffffff',
 };
 const light: Theme = {
-  primary: '#e2eaebaa',
+  primary: '#e2eaeb',
   text: '#000',
   background: '#fff',
-  buttonColor: '#000000',
+  buttonColor: '#f9f9f9',
 };
 export const ModeData: Mode = {
   mode: dark,
