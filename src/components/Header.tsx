@@ -15,6 +15,7 @@ const Box = styled.div`
   width: 100%;
   height: 11em;
   z-index: 1;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 `;
 const H3 = styled.h3`
   color: rgba(97, 218, 251, 0.667);
@@ -37,12 +38,6 @@ const Span = styled.a`
 const Img = styled.img`
   width: 3em;
   height: 3em;
-`;
-const Toggle = styled.button`
-  float: right;
-  margin-right: 3em;
-  color: ${(props) => props.theme.text};
-  background-color: ${(props) => props.theme.buttonColor};
 `;
 
 function Header({ name, children, count }: Props) {

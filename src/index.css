@@ -49,6 +49,7 @@ button {
   width: 60px;
   height: 34px;
   float: right;
+  margin-right: 2em;
 }
 
 .switch input { 
@@ -67,6 +68,7 @@ button {
   background-color: #ccc;
   -webkit-transition: .4s;
   transition: .4s;
+  
 }
 
 .slider:before {
