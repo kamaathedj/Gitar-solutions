@@ -25,10 +25,10 @@ const light: Theme = {
   buttonColor: '#f9f9f9',
 };
 export const ModeData: Mode = {
-  mode: dark,
+  mode: light,
   isDark: false,
   ChangeMode: action((state) => {
-    state.mode = state.isDark ? dark : light;
+    state.mode = state.isDark ? light : dark;
     state.isDark = !state.isDark;
   }),
 };

@@ -47,20 +47,23 @@ const Toggle = styled.button`
 
 function Header({ name, children, count }: Props) {
   const { ChangeMode } = useStoreActions((state) => state.theme);
-  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
-    e.preventDefault();
+  const handleClick = () => {
     ChangeMode(undefined);
   };
   return (
     <Box>
       <p>
         <H3>{name}</H3>
-        <Toggle onClick={handleClick}>Dark|Light</Toggle>
+        <label className="switch">
+          <input type="checkbox" onChange={handleClick} />
+          <span className="slider round" />
+        </label>
       </p>
       <Img src={carrot} alt="logo" className="logotext" />
 
       <div>
         {count > 0 ? <Span>{count}</Span> : <p />}
+
         <NavLinkRouter />
       </div>
     </Box>
