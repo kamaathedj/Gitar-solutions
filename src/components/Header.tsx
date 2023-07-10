@@ -47,13 +47,13 @@ function Header({ name, children, count }: Props) {
   };
   return (
     <Box>
-      <p>
+      <div>
         <H3>{name}</H3>
         <label className="switch">
           <input type="checkbox" onChange={handleClick} />
           <span className="slider round" />
         </label>
-      </p>
+      </div>
       <Img src={carrot} alt="logo" className="logotext" />
 
       <div>
