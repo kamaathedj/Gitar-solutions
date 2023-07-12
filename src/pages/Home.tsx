@@ -1,9 +1,12 @@
 import { styled } from 'styled-components';
 import { useStoreState } from '../hooks/Easy-peasy-hooks';
 import Header from '../components/Header';
+import Location from '../assets/coordinate.svg';
+import github from '../assets/star.svg';
+import Footer from '../components/Footer';
 
 const List = styled.div`
-  padding-top: 200px;
+  padding-top: 20px;
   display: grid;
   grid-template-columns: auto auto auto;
   column-gap: 20px;
@@ -30,15 +33,42 @@ const Title = styled.h3`
 const P = styled.p`
   color: ${(props) => props.theme.text};
 `;
+const Content = styled.div`
+  padding-top: 120px;
+`;
+const Align = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+const CircularImage = styled.img`
+  height: 8em;
+  width: 8em;
+  border-radius: 50%;
+`;
 
 function Home() {
-  const { count, data } = useStoreState((state) => state.products);
+  const { data } = useStoreState((state) => state.products);
+  const me = useStoreState((state) => state.me);
 
   return (
     <>
-      <Header name="Developer" count={count}>
-        logo here .........
-      </Header>
+      <Header name={me.name} />
+      <Content>
+        <Card>
+          <CircularImage src={me.imageUrl} />
+          <Title>{me.name}</Title>
+          <Title>{me.proffesion}</Title>
+          <Align>
+            <Img src={github} />
+            <P>{me.github}</P>
+          </Align>
+          <Align>
+            <Img src={Location} />
+            <P>{me.location}</P>
+          </Align>
+          <P>{me.description}</P>
+        </Card>
+      </Content>
       <List>
         {data.map((x) => (
           <Card key={x.title}>
@@ -48,6 +78,7 @@ function Home() {
           </Card>
         ))}
       </List>
+      <Footer />
     </>
   );
 }

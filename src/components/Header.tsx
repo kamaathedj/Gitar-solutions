@@ -1,19 +1,16 @@
 import { styled } from 'styled-components';
 import NavLinkRouter from './NavLinkRouter';
-import carrot from '../assets/carrot.svg';
+import macbook from '../assets/macbook-pro.svg';
 import { useStoreActions } from '../hooks/Easy-peasy-hooks';
 
 interface Props {
   name: string;
-  count: number;
-  children: React.ReactNode;
 }
 const Box = styled.div`
   background: ${(props) => props.theme.primary};
-  position: fixed;
-  display: block;
+  position: absolute;
   width: 100%;
-  height: 11em;
+  height: 7em;
   z-index: 1;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 `;
@@ -22,45 +19,30 @@ const H3 = styled.h3`
   margin-left: 2em;
   text-align: left;
 `;
-
-const Span = styled.a`
-  text-align: left;
-  margin-left: 2em;
-  border-radius: 10px;
-  border: 1px solid transparent;
-  padding: 0.2em 1em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: rgba(97, 218, 251, 0.667);
-`;
-
 const Img = styled.img`
   width: 3em;
   height: 3em;
 `;
-
-function Header({ name, children, count }: Props) {
+const Align = styled.div`
+  display: flex;
+  justify-content: flex-start;
+`;
+function Header({ name }: Props) {
   const { ChangeMode } = useStoreActions((state) => state.theme);
   const handleClick = () => {
     ChangeMode(undefined);
   };
   return (
     <Box>
-      <div>
+      <Align>
+        <Img src={macbook} alt="logo" className="logotext" />
         <H3>{name}</H3>
-        <label className="switch">
-          <input type="checkbox" onChange={handleClick} />
-          <span className="slider round" />
-        </label>
-      </div>
-      <Img src={carrot} alt="logo" className="logotext" />
-
-      <div>
-        {count > 0 ? <Span>{count}</Span> : <p />}
-
-        <NavLinkRouter />
-      </div>
+      </Align>
+      <label className="switch">
+        <input type="checkbox" onChange={handleClick} />
+        <span className="slider round" />
+      </label>
+      {/* <NavLinkRouter /> */}
     </Box>
   );
 }
