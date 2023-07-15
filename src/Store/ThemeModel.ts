@@ -25,7 +25,7 @@ const light: Theme = {
   text: '#395268',
   background: '#fff',
   buttonColor: '#f9f9f9',
-  cardColor: 'rgba(255, 255, 255, 0.8)',
+  cardColor: '#f0ffff',
 };
 export const ModeData: Mode = {
   mode: light,

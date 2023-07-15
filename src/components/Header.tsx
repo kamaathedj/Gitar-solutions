@@ -1,5 +1,4 @@
 import { styled } from 'styled-components';
-import NavLinkRouter from './NavLinkRouter';
 import macbook from '../assets/macbook-pro.svg';
 import { useStoreActions } from '../hooks/Easy-peasy-hooks';
 
