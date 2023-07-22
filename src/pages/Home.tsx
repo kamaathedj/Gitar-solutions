@@ -66,6 +66,7 @@ function Home() {
             <Img src={Location} />
             <P>{me.location}</P>
           </Align>
+
           <P>{me.description}</P>
         </Card>
       </Content>

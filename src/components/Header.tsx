@@ -35,7 +35,7 @@ function Header({ name }: Props) {
     <Box>
       <Align>
         <Img src={macbook} alt="logo" className="logotext" />
-        <H3>{name}</H3>
+        <H3>{name} 😎</H3>
       </Align>
       <label className="switch">
         <input type="checkbox" onChange={handleClick} />
