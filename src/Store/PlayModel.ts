@@ -1,4 +1,12 @@
 import { computed, Computed } from 'easy-peasy';
+import Broccoli from '../assets/broccoli.svg';
+import Avocado from '../assets/avocado.svg';
+import Lettuce from '../assets/lettuce.svg';
+import Potato from '../assets/potatoes.svg';
+import Water from '../assets/water.svg';
+import Lemon from '../assets/lemon.svg';
+import Avocandos from '../assets/avocados.svg';
+import Chilli from '../assets/chilli.svg';
 
 type Info = {
   title: string;
@@ -16,49 +24,49 @@ export const PlayData: PlayModel = {
     {
       title: 'Java',
       description: 'Java experience 5years',
-      imageUrl: 'src/assets/avocado.svg',
+      imageUrl: Avocado,
       done: true,
     },
     {
       title: 'javascript',
       description: 'javascript experience 8 years',
-      imageUrl: 'src/assets/broccoli.svg',
+      imageUrl: Broccoli,
       done: true,
     },
     {
       title: 'python',
       description: 'python experience 3 years',
-      imageUrl: 'src/assets/lettuce.svg',
+      imageUrl: Lettuce,
       done: true,
     },
     {
       title: 'Flutter',
       description: 'javascript experience 2 years',
-      imageUrl: 'src/assets/potatoes.svg',
+      imageUrl: Potato,
       done: true,
     },
     {
       title: 'Android',
       description: 'Android experience 2years',
-      imageUrl: 'src/assets/water.svg',
+      imageUrl: Water,
       done: true,
     },
     {
       title: 'Reactjs',
       description: 'javascript experience 4 years',
-      imageUrl: 'src/assets/lemon.svg',
+      imageUrl: Lemon,
       done: true,
     },
     {
       title: 'Node js',
       description: 'python experience 5 years',
-      imageUrl: 'src/assets/avocados.svg',
+      imageUrl: Avocandos,
       done: true,
     },
     {
       title: 'Django + Flask',
       description: 'javascript experience 2 years',
-      imageUrl: 'src/assets/chilli.svg',
+      imageUrl: Chilli,
       done: true,
     },
   ],
