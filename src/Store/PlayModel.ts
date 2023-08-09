@@ -41,7 +41,7 @@ export const PlayData: PlayModel = {
     },
     {
       title: 'Flutter',
-      description: 'javascript experience 2 years',
+      description: 'flutter experience 2 years',
       imageUrl: Potato,
       done: true,
     },
@@ -53,19 +53,20 @@ export const PlayData: PlayModel = {
     },
     {
       title: 'Reactjs',
-      description: 'javascript experience 4 years',
+      description:
+        'Reactjs  experience 4 years using both javascript and typescript',
       imageUrl: Lemon,
       done: true,
     },
     {
       title: 'Node js',
-      description: 'python experience 5 years',
+      description: 'Nodejs experience 5 years',
       imageUrl: Avocandos,
       done: true,
     },
     {
       title: 'Django + Flask',
-      description: 'javascript experience 2 years',
+      description: 'Django and flask experience 2 years',
       imageUrl: Chilli,
       done: true,
     },
